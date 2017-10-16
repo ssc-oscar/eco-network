@@ -5,10 +5,16 @@ Ember_Cran_Summary.ipynb:
 ------------------------
 ### Data source:   
 Ember Eco dependency is retrieved from(dependency) npm view --json <package> (dependents) deppkgs <package>
-Ember Eco authorship linked package is built on top of data retrieved from npms
+Ember Eco authorship linked package is built on top of data retrieved from npms.
+Only ember packages with github repo noted in the npms are included (to ensure that authorship is 
+obtainable).
 
-R CRAN dependency is built on top of data retrieved from(dependency) library.io
+
+R CRAN dependency is built on top of data retrieved from(dependency) libraries.io.
+As a result, packages with no upstream dependencies are omitted (are not in libraris.io).
+
 R CRAN authorship linked package network is built on top of data retrieved from META CRAN
+
 
 ### Script locations(all on da4 server):
 
