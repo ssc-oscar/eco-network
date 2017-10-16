@@ -36,7 +36,7 @@ R CRAN authorship linked package network is built on top of data retrieved from 
 
 - script /data/play/script_dealing_ember_dependency/generate_data_for_summary.py generate data for R boxplot.
 
-
+**Notice**: I've changed python file names slightly in code folder in order to make it more comprehensible.
 ### Data locations(all on da4 server):
 
 - Ember eco dependencies -- **/data/play/Ember_ECO_data/[direct_downstream,direct_upstream,recursive_downstreams,recursive_upstreams][.In,.Out]?**  
