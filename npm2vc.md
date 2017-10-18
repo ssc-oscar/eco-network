@@ -27,7 +27,31 @@ db.npms_all.find ({ 'collected.github':{'$exists':false} },{"collected.metadata.
 { "_id" : ObjectId("59e0ea0280fe8d0c5f758d84"), "collected" : { "metadata" : { "repository" : { "type" : "git", "url" : "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git" }, "name" : "@types/h2o2" } } }
 { "_id" : ObjectId("59e0ea0380fe8d0c5f758d87"), "collected" : { "metadata" : { "repository" : { "type" : "git", "url" : "git+https://github.com/mytcer/mkfiles.git" }, "name" : "mkfiles" } } }
 ```
-
+ Not all repos are git:
+ ----------------------
+ ```
+ db.npms_all.find (  { 'collected.github':{'$exists':false},"collected.metadata.repository":{'$exists':true},"collected.metadata.repository.type": {"$ne":"git"} },{"collected.metadata.name":true,"collected.metadata.repository":true})
+{ "_id" : ObjectId("59e0ea7380fe8d0c5f758f1d"), "collected" : { "metadata" : { "repository" : { "type" : "github", "url" : "git+https://github.com/webonly/HitRobotApp.git" }, "name" : "wellapp" } } }
+{ "_id" : ObjectId("59e0eab780fe8d0c5f75900b"), "collected" : { "metadata" : { "repository" : { "url" : "http://www.githugz.com/projects/npm/find-emails-in-string" }, "name" : "find-emails-in-string" } } }
+{ "_id" : ObjectId("59e0ebc780fe8d0c5f7593d3"), "collected" : { "metadata" : { "repository" : { "git" : "https://git.solidstategroup.com/solidstategroup/ssg-frontend-modules/tree/master" }, "name" : "ssg-webpack" } } }
+{ "_id" : ObjectId("59e0ebd980fe8d0c5f75940f"), "collected" : { "metadata" : { "repository" : { "url" : "git+https://github.com/SaschaDeWaal/simple-object-library.git" }, "name" : "simple-object-library" } } }
+{ "_id" : ObjectId("59e0ebde80fe8d0c5f75941d"), "collected" : { "metadata" : { "repository" : { "type" : "svn", "url" : "https://repo.eecs.berkeley.edu/svn-anon/projects/terraswarm/accessors/trunk/accessors" }, "name" : "@accessors-hosts/common" } } }
+{ "_id" : ObjectId("59e0ec0880fe8d0c5f7594ae"), "collected" : { "metadata" : { "repository" : { "git" : "git@github.com:avil13/a2-notification.git" }, "name" : "a2-notifications" } } }
+{ "_id" : ObjectId("59e0ec9680fe8d0c5f75969f"), "collected" : { "metadata" : { "repository" : { "type" : "mercurial", "url" : "git+https://bitbucket.org/justcompile/devdns.git" }, "name" : "devdns" } } }
+{ "_id" : ObjectId("59e0ecff80fe8d0c5f75980f"), "collected" : { "metadata" : { "repository" : { "type" : "svn" }, "name" : "oasi-sidebar" } } }
+{ "_id" : ObjectId("59e0ed8180fe8d0c5f7599e3"), "collected" : { "metadata" : { "repository" : { "type" : "mercurial", "url" : "git+ssh://git@bitbucket.org/sensibill/unforward.git" }, "name" : "unforward" } } }
+{ "_id" : ObjectId("59e0ef8180fe8d0c5f75a052"), "collected" : { "metadata" : { "repository" : { "url" : "git+https://github.com/kazuyukitanimura/designo.git" }, "name" : "designo" } } }
+{ "_id" : ObjectId("59e0efb980fe8d0c5f75a11b"), "collected" : { "metadata" : { "repository" : { "type" : "svn" }, "name" : "sanjaymodule4" } } }
+{ "_id" : ObjectId("59e0f00280fe8d0c5f75a21b"), "collected" : { "metadata" : { "repository" : { "url" : "git+https://github.com/pavliha/form.git" }, "name" : "form-to-json" } } }
+{ "_id" : ObjectId("59e0f20080fe8d0c5f75a91f"), "collected" : { "metadata" : { "repository" : { "url" : "git://github.com/seokirill/gulp-webp-html.git" }, "name" : "gulp-webp-html" } } }
+{ "_id" : ObjectId("59e0f27580fe8d0c5f75aabd"), "collected" : { "metadata" : { "repository" : { "url" : "git+https://_paulem@bitbucket.org/_paulem/node-bitbucket-api.git" }, "name" : "bitbucket-api2" } } }
+{ "_id" : ObjectId("59e0f2c780fe8d0c5f75abdf"), "collected" : { "metadata" : { "repository" : { "type" : "https", "url" : "git+https://github.com/zero/zero-async.git" }, "name" : "zero-async" } } }
+{ "_id" : ObjectId("59e0f31480fe8d0c5f75acdb"), "collected" : { "metadata" : { "repository" : { "type" : "svn" }, "name" : "aykut_nodetutorial" } } }
+{ "_id" : ObjectId("59e0f32180fe8d0c5f75ad08"), "collected" : { "metadata" : { "repository" : { "url" : "git+https://github.com/lorenzoferrante/quick-html.git" }, "name" : "make-toast" } } }
+{ "_id" : ObjectId("59e0f33680fe8d0c5f75ad53"), "collected" : { "metadata" : { "repository" : { "type" : "mercurial", "url" : "git+https://bitbucket.org/kwatch/oktest.git" }, "name" : "oktest" } } }
+{ "_id" : ObjectId("59e0f3a180fe8d0c5f75aece"), "collected" : { "metadata" : { "repository" : { "type" : "hg", "url" : "git+https://bitbucket.org/kierans777/node-perl-debugger.git" }, "name" : "node-perl-debugger" } } }
+{ "_id" : ObjectId("59e0f3e980fe8d0c5f75afd0"), "collected" : { "metadata" : { "repository" : { "type" : "svn" }, "name" : "oasi-footer" } } }
+```
 
 Case where github url is provided but npms does not have gh data:
 ----------------------------------------------------------------
